@@ -103,16 +103,76 @@
             max-width: 150px;
         }
 
-        /* Seção de produtos */
-        .products-section, .testimonials-section {
+        /* Seção de produtos e depoimentos */
+        .products-section, .testimonials-section, .faq-section {
             padding: 40px 5%;
         }
 
         h2 {
             font-size: 2em;
             margin-bottom: 30px;
+            text-align: center; /* Adicionado para centralizar títulos de seção */
         }
 
+        /* Estilos do Acordeão (FAQ) */
+        .faq-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            background-color: #f9f9f9;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #f1f1f1;
+        }
+
+        .faq-question span {
+            font-weight: 700;
+        }
+
+        .faq-question i {
+            color: #3e3e3e;
+            font-size: 1.2em;
+        }
+
+        .faq-answer {
+            background-color: #fff;
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+
+        .faq-answer p {
+            padding: 20px 0;
+            margin: 0;
+        }
+
+        .faq-question.active + .faq-answer {
+            max-height: 200px; /* Valor ajustável, deve ser maior que o conteúdo */
+            padding: 20px;
+        }
+
+        /* Seção de produtos */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -237,6 +297,41 @@
             </div>
         </section>
 
+        <section class="faq-section">
+            <h2>Perguntas Frequentes (FAQ)</h2>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Onde fica a loja física de vocês?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nós não temos uma loja física aberta ao público. Nosso atendimento é focado em levar a solução até você, seja em domicílio ou no seu local de trabalho, com total comodidade e segurança.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quais marcas de máquinas de costura vocês consertam?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Somos especializados em máquinas de costura Singer, mas também atendemos outras marcas domésticas. Entre em contato pelo WhatsApp para verificar se consertamos a sua marca específica.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Vocês fazem orçamentos sem compromisso?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, todos os nossos orçamentos são gratuitos e sem compromisso. Entendemos a importância de uma decisão informada e transparente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="products-section">
             <h2>Produtos à venda</h2>
             <div class="products-grid">
@@ -276,5 +371,25 @@
         </section>
     </main>
 
+    <script>
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                question.classList.toggle('active');
+                if (question.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                } else {
+                    answer.style.maxHeight = '0';
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
