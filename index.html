@@ -162,15 +162,15 @@
             transition: max-height 0.3s ease-out, padding 0.3s ease-out;
         }
 
-        /* Ajuste crucial para o espaçamento */
         .faq-answer p {
-            padding: 0; /* Removido o padding do parágrafo */
-            margin: 10px 0; /* Adicionado uma margem controlada */
+            padding: 0;
+            margin: 10px 0;
         }
 
+        /* AQUI ESTÁ O AJUSTE PARA REMOVER O ESPAÇAMENTO SUPERIOR DO TEXTO */
         .faq-question.active + .faq-answer {
             max-height: 200px;
-            padding: 15px;
+            padding: 0 15px 15px; /* Ajustado para 0 no topo */
         }
 
         /* Seção de produtos */
@@ -379,7 +379,6 @@
                 const answer = question.nextElementSibling;
                 const icon = question.querySelector('i');
                 
-                // Fechar todas as outras respostas abertas
                 faqQuestions.forEach(otherQuestion => {
                     if (otherQuestion !== question && otherQuestion.classList.contains('active')) {
                         otherQuestion.classList.remove('active');
