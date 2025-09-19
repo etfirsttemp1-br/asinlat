@@ -162,13 +162,14 @@
             transition: max-height 0.3s ease-out, padding 0.3s ease-out;
         }
 
+        /* Ajuste crucial para o espaçamento */
         .faq-answer p {
-            padding: 15px 0;
-            margin: 0;
+            padding: 0; /* Removido o padding do parágrafo */
+            margin: 10px 0; /* Adicionado uma margem controlada */
         }
 
         .faq-question.active + .faq-answer {
-            max-height: 200px; /* Valor ajustável, deve ser maior que o conteúdo */
+            max-height: 200px;
             padding: 15px;
         }
 
