@@ -104,7 +104,7 @@
         }
 
         /* Seção de produtos e depoimentos */
-        .products-section, .testimonials-section, .faq-section {
+        .products-section, .testimonials-section, .faq-section, .map-section {
             padding: 40px 5%;
         }
 
@@ -167,10 +167,53 @@
             margin: 10px 0;
         }
 
-        /* AQUI ESTÁ O AJUSTE PARA REMOVER O ESPAÇAMENTO SUPERIOR DO TEXTO */
         .faq-question.active + .faq-answer {
             max-height: 200px;
-            padding: 0 15px 15px; /* Ajustado para 0 no topo */
+            padding: 0 15px 15px;
+        }
+        
+        /* Seção do Mapa */
+        .map-section {
+            padding: 40px 5%;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .map-container {
+            height: 400px;
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .address-details {
+            margin-top: 20px;
+        }
+
+        .address-details p {
+            margin: 5px 0;
+        }
+
+        .directions-btn {
+            display: inline-block;
+            background-color: #3e3e3e;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .directions-btn:hover {
+            background-color: #555;
+        }
+
+        .directions-btn i {
+            margin-right: 8px;
         }
 
         /* Seção de produtos */
@@ -269,6 +312,9 @@
             .testimonial-content {
                 flex-direction: column;
             }
+            .map-container {
+                height: 300px;
+            }
         }
     </style>
 </head>
@@ -299,35 +345,35 @@
         </section>
 
         <section class="faq-section">
-            <h2>Dúvidas Frequentes</h2>
+            <h2>Perguntas Frequentes (FAQ)</h2>
             <div class="faq-accordion">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Onde fica a loja física?</span>
+                        <span>Onde fica a loja física de vocês?</span>
                         <i class="fas fa-plus"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Na verdade, o local é uma residência. Ela fica entre a Avenidas Cangaíba e Governador Carvalho Pinto.</p>
+                        <p>Nós não temos uma loja física aberta ao público. Nosso atendimento é focado em levar a solução até você, seja em domicílio ou no seu local de trabalho, com total comodidade e segurança.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Quais regiões você atende?</span>
+                        <span>Quais marcas de máquinas de costura vocês consertam?</span>
                         <i class="fas fa-plus"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Em boa parte da Zona Leste 1 (Cangaíba, Vila Matilde, Arthur Alvim, Penha, Ponte Rasa).</p>
+                        <p>Somos especializados em máquinas de costura Singer, mas também atendemos outras marcas domésticas. Entre em contato pelo WhatsApp para verificar se consertamos a sua marca específica.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Como funciona o atendimento à domicílio?</span>
+                        <span>Vocês fazem orçamentos sem compromisso?</span>
                         <i class="fas fa-plus"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Após o cliente entrar em contato por telefone ou mensagem e desejar uma visita, o técnico irá ao local marcado para realizar o orçamento, ou até mesmo o reparo do aparelho.</p>
+                        <p>Sim, todos os nossos orçamentos são gratuitos e sem compromisso. Entendemos a importância de uma decisão informada e transparente.</p>
                     </div>
                 </div>
             </div>
@@ -370,8 +416,22 @@
                 </div>
             </div>
         </section>
-    </main>
 
+        <section class="map-section">
+            <h2>Nossa Localização</h2>
+            <div class="map-container">
+                </div>
+            <div class="address-details">
+                <p><strong>A Singer Latina</strong></p>
+                <p>R. Firmiano Cardoso, 276 - Chácara Cruzeiro do Sul, São Paulo - SP, 03732-040</p>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Rua+Firmiano+Cardoso,+276,+Ch%C3%A1cara+Cruzeiro+do+Sul,+S%C3%A3o+Paulo+-+SP,+03732-040" target="_blank" class="directions-btn">
+                    <i class="fas fa-map-marked-alt"></i> Obter Rotas
+                </a>
+            </div>
+        </section>
+
+    </main>
+    
     <script>
         const faqQuestions = document.querySelectorAll('.faq-question');
         faqQuestions.forEach(question => {
@@ -403,6 +463,3 @@
     </script>
 </body>
 </html>
-
-
-
