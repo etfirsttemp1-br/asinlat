@@ -111,7 +111,7 @@
         h2 {
             font-size: 2em;
             margin-bottom: 30px;
-            text-align: center; /* Adicionado para centralizar títulos de seção */
+            text-align: center;
         }
 
         /* Estilos do Acordeão (FAQ) */
@@ -133,7 +133,7 @@
 
         .faq-question {
             background-color: #f9f9f9;
-            padding: 20px;
+            padding: 15px; /* Reduzido de 20px */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -156,20 +156,20 @@
 
         .faq-answer {
             background-color: #fff;
-            padding: 0 20px;
+            padding: 0 15px; /* Reduzido de 20px */
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out, padding 0.3s ease-out;
         }
 
         .faq-answer p {
-            padding: 20px 0;
+            padding: 15px 0; /* Reduzido de 20px */
             margin: 0;
         }
 
         .faq-question.active + .faq-answer {
             max-height: 200px; /* Valor ajustável, deve ser maior que o conteúdo */
-            padding: 20px;
+            padding: 15px; /* Reduzido de 20px */
         }
 
         /* Seção de produtos */
