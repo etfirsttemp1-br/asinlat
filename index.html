@@ -133,7 +133,7 @@
 
         .faq-question {
             background-color: #f9f9f9;
-            padding: 15px; /* Reduzido de 20px */
+            padding: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -156,20 +156,20 @@
 
         .faq-answer {
             background-color: #fff;
-            padding: 0 15px; /* Reduzido de 20px */
+            padding: 0 15px;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out, padding 0.3s ease-out;
         }
 
         .faq-answer p {
-            padding: 15px 0; /* Reduzido de 20px */
-            margin: 0;
+            padding: 15px 0;
+            margin: 0; /* <<< ESTA É A MUDANÇA MAIS IMPORTANTE >>> */
         }
 
         .faq-question.active + .faq-answer {
             max-height: 200px; /* Valor ajustável, deve ser maior que o conteúdo */
-            padding: 15px; /* Reduzido de 20px */
+            padding: 15px;
         }
 
         /* Seção de produtos */
@@ -227,169 +227,4 @@
         }
 
         .video-container {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .video-container video {
-            width: 100%;
-            border-radius: 8px;
-        }
-
-        .quotes-container {
-            flex: 2;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .quotes-container blockquote {
-            font-style: italic;
-            margin-bottom: 15px;
-            line-height: 1.4;
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .services-section {
-                flex-direction: column;
-                align-items: center;
-                margin: 0 20px;
-            }
-            .service-card {
-                flex-direction: row;
-                gap: 20px;
-                text-align: left;
-            }
-            .hero-content h2 {
-                font-size: 1.5em;
-            }
-            .testimonial-content {
-                flex-direction: column;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <header class="hero-section">
-        <div class="logo">
-           <img src="logo.png" alt="Logo Singer Latina" style="max-width:200px;">
-        </div>
-        <div class="hero-content">
-            <h2>Serviços especializados de conserto e manutenção para sua máquina de costura doméstica e purificadores de água.</h2>
-            <a href="https://wa.me/5511980984748" class="whatsapp-btn">
-                <i class="fab fa-whatsapp"></i> Fale conosco pelo WhatsApp
-            </a>
-        </div>
-    </header>
-
-    <main>
-        <section class="services-section">
-            <div class="service-card">
-                <i class="fas fa-screwdriver-wrench"></i>
-                <p>Atendemos à domicílio e no espaço</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-tint"></i>
-                <p>Orçamento sem compromisso</p>
-            </div>
-        </section>
-
-        <section class="faq-section">
-            <h2>Perguntas Frequentes (FAQ)</h2>
-            <div class="faq-accordion">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Onde fica a loja física de vocês?</span>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Nós não temos uma loja física aberta ao público. Nosso atendimento é focado em levar a solução até você, seja em domicílio ou no seu local de trabalho, com total comodidade e segurança.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Quais marcas de máquinas de costura vocês consertam?</span>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Somos especializados em máquinas de costura Singer, mas também atendemos outras marcas domésticas. Entre em contato pelo WhatsApp para verificar se consertamos a sua marca específica.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Vocês fazem orçamentos sem compromisso?</span>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Sim, todos os nossos orçamentos são gratuitos e sem compromisso. Entendemos a importância de uma decisão informada e transparente.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="products-section">
-            <h2>Produtos à venda</h2>
-            <div class="products-grid">
-                <div class="product-card">
-                    <img src="caminho/para/imagem1.jpg" alt="Máquina de Costura Branca">
-                    <p class="price">R$ 450</p>
-                    <a href="#" class="btn-product">Quero saber mais</a>
-                </div>
-                <div class="product-card">
-                    <img src="caminho/para/imagem2.jpg" alt="Purificador de Água">
-                    <p class="price">R$ 790</p>
-                    <a href="#" class="btn-product">Quero saber mais</a>
-                </div>
-                <div class="product-card">
-                    <img src="caminho/para/imagem3.jpg" alt="Máquina de Costura Preta">
-                    <p class="price">R$ 370</p>
-                    <a href="#" class="btn-product">Quero saber mais</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="testimonials-section">
-            <h2>Depoimentos</h2>
-            <div class="testimonial-content">
-                <div class="video-container">
-                    <video controls>
-                        <source src="caminho/para/video.mp4" type="video/mp4">
-                        Seu navegador não suporta a tag de vídeo.
-                    </video>
-                </div>
-                <div class="quotes-container">
-                    <blockquote>"Serviço excelente!"</blockquote>
-                    <blockquote>"Excelente atendimento!"</blockquote>
-                    <blockquote>"Fui muito bem atendido!"</blockquote>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const icon = question.querySelector('i');
-                
-                question.classList.toggle('active');
-                if (question.classList.contains('active')) {
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                    icon.classList.remove('fa-plus');
-                    icon.classList.add('fa-minus');
-                } else {
-                    answer.style.maxHeight = '0';
-                    icon.classList.remove('fa-minus');
-                    icon.classList.add('fa-plus');
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+            flex:
